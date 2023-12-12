@@ -1,0 +1,22 @@
+{
+  "konto": [
+    {
+      "id": 1,
+      "name": "Konto 1",
+      "kontostand": 1000,
+      "kontonummer": "DE123456789"
+    },
+    {
+      "id": 2,
+      "name": "Konto 2",
+      "kontostand": 500,
+      "kontonummer": "DE987654321"
+    },
+    {
+      "id": 3,
+      "name": "Konto 3",
+      "kontostand": 2000,
+      "kontonummer": "DE123456789"
+    }
+  ]
+}

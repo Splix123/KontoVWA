@@ -2,7 +2,8 @@
 
 ## Install:
 
-- Material UI
-- Json-Server
-- Zustand
-- tastack table
+- ~~Material UI~~
+- ~~Json-Server~~
+- ~~Zustand~~
+- React router
+- tanstack table
