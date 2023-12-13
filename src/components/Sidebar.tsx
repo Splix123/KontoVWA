@@ -12,6 +12,7 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Typography,
 } from "@mui/material";
 
 // Icons
@@ -83,9 +84,14 @@ function Sidebar() {
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
           {open ? (
-            <IconButton onClick={handleDrawerClose}>
-              <ChevronLeft />
-            </IconButton>
+            <>
+              <Typography variant="h6" marginRight={15}>
+                Menü
+              </Typography>
+              <IconButton onClick={handleDrawerClose}>
+                <ChevronLeft />
+              </IconButton>
+            </>
           ) : (
             <IconButton
               color="inherit"
@@ -104,7 +110,7 @@ function Sidebar() {
             <ListItem key={text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
-                  minHeight: 48,
+                  minHeight: 65,
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
                 }}

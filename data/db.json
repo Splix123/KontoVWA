@@ -4,19 +4,187 @@
       "id": 1,
       "name": "Konto 1",
       "kontostand": 1000,
-      "kontonummer": "DE123456789"
+      "kontonummer": "DE123456789",
+      "Buchungen": [
+        {
+          "id": 1,
+          "betrag": 100,
+          "buchungsdatum": "2019-01-01",
+          "buchungstext": "Testbuchung 1"
+        },
+        {
+          "id": 2,
+          "betrag": 200,
+          "buchungsdatum": "2019-01-02",
+          "buchungstext": "Testbuchung 2"
+        },
+        {
+          "id": 3,
+          "betrag": 300,
+          "buchungsdatum": "2019-01-03",
+          "buchungstext": "Testbuchung 3"
+        },
+        {
+          "id": 4,
+          "betrag": 400,
+          "buchungsdatum": "2019-01-04",
+          "buchungstext": "Testbuchung 4"
+        },
+        {
+          "id": 5,
+          "betrag": 500,
+          "buchungsdatum": "2019-01-05",
+          "buchungstext": "Testbuchung 5"
+        },
+        {
+          "id": 6,
+          "betrag": 600,
+          "buchungsdatum": "2019-01-06",
+          "buchungstext": "Testbuchung 6"
+        },
+        {
+          "id": 7,
+          "betrag": 700,
+          "buchungsdatum": "2019-01-07",
+          "buchungstext": "Testbuchung 7"
+        },
+        {
+          "id": 8,
+          "betrag": 800,
+          "buchungsdatum": "2019-01-08",
+          "buchungstext": "Testbuchung 8"
+        },
+        {
+          "id": 9,
+          "betrag": 900,
+          "buchungsdatum": "2019-01-09",
+          "buchungstext": "Testbuchung 9"
+        }
+      ]
     },
     {
       "id": 2,
       "name": "Konto 2",
       "kontostand": 500,
-      "kontonummer": "DE987654321"
+      "kontonummer": "DE987654321",
+      "Buchungen": [
+        {
+          "id": 1,
+          "betrag": 100,
+          "buchungsdatum": "2019-01-01",
+          "buchungstext": "Testbuchung 1"
+        },
+        {
+          "id": 2,
+          "betrag": 200,
+          "buchungsdatum": "2019-01-02",
+          "buchungstext": "Testbuchung 2"
+        },
+        {
+          "id": 3,
+          "betrag": 300,
+          "buchungsdatum": "2019-01-03",
+          "buchungstext": "Testbuchung 3"
+        },
+        {
+          "id": 4,
+          "betrag": 400,
+          "buchungsdatum": "2019-01-04",
+          "buchungstext": "Testbuchung 4"
+        },
+        {
+          "id": 5,
+          "betrag": 500,
+          "buchungsdatum": "2019-01-05",
+          "buchungstext": "Testbuchung 5"
+        },
+        {
+          "id": 6,
+          "betrag": 600,
+          "buchungsdatum": "2019-01-06",
+          "buchungstext": "Testbuchung 6"
+        },
+        {
+          "id": 7,
+          "betrag": 700,
+          "buchungsdatum": "2019-01-07",
+          "buchungstext": "Testbuchung 7"
+        },
+        {
+          "id": 8,
+          "betrag": 800,
+          "buchungsdatum": "2019-01-08",
+          "buchungstext": "Testbuchung 8"
+        },
+        {
+          "id": 9,
+          "betrag": 900,
+          "buchungsdatum": "2019-01-09",
+          "buchungstext": "Testbuchung 9"
+        }
+      ]
     },
     {
       "id": 3,
       "name": "Konto 3",
       "kontostand": 2000,
-      "kontonummer": "DE123456789"
+      "kontonummer": "DE123456789",
+      "Buchungen": [
+        {
+          "id": 1,
+          "betrag": 100,
+          "buchungsdatum": "2019-01-01",
+          "buchungstext": "Testbuchung 1"
+        },
+        {
+          "id": 2,
+          "betrag": 200,
+          "buchungsdatum": "2019-01-02",
+          "buchungstext": "Testbuchung 2"
+        },
+        {
+          "id": 3,
+          "betrag": 300,
+          "buchungsdatum": "2019-01-03",
+          "buchungstext": "Testbuchung 3"
+        },
+        {
+          "id": 4,
+          "betrag": 400,
+          "buchungsdatum": "2019-01-04",
+          "buchungstext": "Testbuchung 4"
+        },
+        {
+          "id": 5,
+          "betrag": 500,
+          "buchungsdatum": "2019-01-05",
+          "buchungstext": "Testbuchung 5"
+        },
+        {
+          "id": 6,
+          "betrag": 600,
+          "buchungsdatum": "2019-01-06",
+          "buchungstext": "Testbuchung 6"
+        },
+        {
+          "id": 7,
+          "betrag": 700,
+          "buchungsdatum": "2019-01-07",
+          "buchungstext": "Testbuchung 7"
+        },
+        {
+          "id": 8,
+          "betrag": 800,
+          "buchungsdatum": "2019-01-08",
+          "buchungstext": "Testbuchung 8"
+        },
+        {
+          "id": 9,
+          "betrag": 900,
+          "buchungsdatum": "2019-01-09",
+          "buchungstext": "Testbuchung 9"
+        }
+      ]
     }
   ]
 }
