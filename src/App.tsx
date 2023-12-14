@@ -1,11 +1,13 @@
 // Libraries
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 // Components
 import Welcome from "./components/Welcome";
+import UebersichtSidebar from "./components/UebersichtSidebar";
 import Uebersicht from "./components/Uebersicht";
+import ErrorPage from "./components/ErrorPage";
 
 // Styles
 import "./App.css";
@@ -23,11 +25,11 @@ const theme = createTheme({
     },
     secondary: {
       main: "#14C8FA",
-      contrastText: "#FFF",
+      contrastText: "#000",
     },
     text: {
       primary: "#000",
-      secondary: "#FFF",
+      secondary: "#000",
     },
     background: {
       paper: "#F0F1FA",
@@ -39,16 +41,30 @@ const theme = createTheme({
   },
 });
 
+// Router
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Welcome />,
+  },
+  {
+    path: "/uebersicht",
+    element: <UebersichtSidebar />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/uebersicht/:kontoId",
+        element: <Uebersicht />,
+      },
+    ],
+  },
+]);
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Welcome />} />
-            <Route path="/uebersicht" element={<Uebersicht />} />
-          </Routes>
-        </Router>
+        <RouterProvider router={router} />
       </ThemeProvider>
     </QueryClientProvider>
   );

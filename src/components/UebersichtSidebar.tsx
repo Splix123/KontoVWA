@@ -13,10 +13,11 @@ import {
 import UebersichtSidebarList from "./UebersichtSidebarList";
 
 // Stores
-import drawerStore from "../store/DrawerStore.store";
+import drawerStore from "../store/drawerStore.store";
 
 // Icons
 import { Menu, ChevronLeft } from "@mui/icons-material";
+import { Outlet } from "react-router-dom";
 
 const DRAWERWIDTH = 240;
 const TEXTCOLOR = "#FFF";
@@ -121,6 +122,7 @@ function Sidebar() {
         <Divider variant="middle" />
         <UebersichtSidebarList />
       </Drawer>
+      <Outlet />
     </>
   );
 }

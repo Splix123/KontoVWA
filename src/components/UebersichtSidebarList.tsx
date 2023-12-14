@@ -7,6 +7,7 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 // Stores
 import drawerStore from "../store/drawerStore.store";
@@ -25,6 +26,8 @@ function UebersichtSidebarList() {
       {konten.map((konto) => (
         <ListItem key={konto.id} disablePadding sx={{ display: "block" }}>
           <ListItemButton
+            component={Link}
+            to={`/uebersicht/${konto.id}`}
             sx={{
               minHeight: 120,
               justifyContent: open ? "initial" : "center",

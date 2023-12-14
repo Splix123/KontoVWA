@@ -7,14 +7,30 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
+import { useParams } from "react-router-dom";
 
-// Components
-import Sidebar from "./UebersichtSidebar";
+// Stores
+import kontenStore from "../store/kontenStore.store";
+import drawerStore from "../store/drawerStore.store";
 
 function Uebersicht() {
+  //Fetch id from url
+  const { kontoId } = useParams();
+
+  // States
+  const { konten } = kontenStore();
+  const { open } = drawerStore();
+  const marginLeftValue = open ? 260 : 85;
+
+  const konto = konten.find((konto) => konto.id === Number(kontoId));
   return (
-    <>
-      <Sidebar />
+    <div
+      style={{
+        marginLeft: marginLeftValue,
+        marginTop: 7,
+        transition: "ease-in-out 0.2s",
+      }}
+    >
       <Table>
         <TableHead>
           <TableRow>
@@ -25,23 +41,25 @@ function Uebersicht() {
           </TableRow>
         </TableHead>
         <TableBody>
-          <TableRow hover>
-            <TableCell>1</TableCell>
-            <TableCell>2</TableCell>
-            <TableCell>3</TableCell>
-            <TableCell>4</TableCell>
-          </TableRow>
+          {konto?.buchungen.map((buchung) => (
+            <TableRow hover key={buchung.id}>
+              <TableCell>{buchung.id}</TableCell>
+              <TableCell>{buchung.buchungsdatum}</TableCell>
+              <TableCell>{buchung.buchungstext}</TableCell>
+              <TableCell>{buchung.betrag}</TableCell>
+            </TableRow>
+          ))}
         </TableBody>
         <TableFooter sx={{ color: "text.primary" }}>
           <TableRow>
             <TableCell>Aktueller Saldo:</TableCell>
             <TableCell></TableCell>
             <TableCell></TableCell>
-            <TableCell>5</TableCell>
+            <TableCell>Hier noch saldo berechnen</TableCell>
           </TableRow>
         </TableFooter>
       </Table>
-    </>
+    </div>
   );
 }
 

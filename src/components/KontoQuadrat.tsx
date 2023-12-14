@@ -1,11 +1,12 @@
 // Libraries
-import { Button, Stack, Typography } from "@mui/material";
+import { useState } from "react";
+import { Button, Popover, Stack, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 // Types
-type props = {
-  name: string;
-  kontostand: number;
-  icon: "Home" | "School" | "ShowChart" | "Category" | "Alarm";
+import { Konto } from "../../types";
+type Props = {
+  konto: Konto;
 };
 
 // Icons
@@ -27,13 +28,29 @@ const icons = {
   Alarm: <Alarm sx={{ fontSize: 50 }} />,
 };
 
-function KontoQuadrat({ name, kontostand, icon }: props) {
+function KontoQuadrat({ konto }: Props) {
+  const IconComponent = icons[konto.icon];
+
+  // States
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+
   // Handler
-  const kontoClickHandler = () => {
-    console.log("Konto wurde angeklickt");
+  const handleRightClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setAnchorEl(e.currentTarget as HTMLButtonElement);
   };
 
-  const IconComponent = icons[icon];
+  const handleDelete = () => {
+    // deleteUserMutation(selectedUser);
+    // removeKonto(konto.id);
+    setAnchorEl(null);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
 
   return (
     <>
@@ -44,18 +61,43 @@ function KontoQuadrat({ name, kontostand, icon }: props) {
           width: 150,
           height: 150,
         }}
-        onClick={kontoClickHandler}
+        component={Link}
+        to={`/uebersicht/${konto.id}`}
+        onContextMenu={(e) => handleRightClick(e)}
       >
         <Stack direction="column" alignItems="center" spacing={1}>
           <Typography variant="h5" fontWeight="bold" color="text.primary">
-            {kontostand}€
+            {konto.kontostand}€
           </Typography>
           {IconComponent}
           <Typography color="GrayText" style={{ fontSize: 15 }}>
-            {name}
+            {konto.name}
           </Typography>
         </Stack>
       </Button>
+      <Popover
+        id={konto.name}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "center",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
+      >
+        <Button
+          sx={{ p: 2 }}
+          variant="text"
+          color="error"
+          onClick={handleDelete}
+        >
+          Delete User
+        </Button>
+      </Popover>
     </>
   );
 }

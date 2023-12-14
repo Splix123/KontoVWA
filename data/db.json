@@ -2,10 +2,11 @@
   "konto": [
     {
       "id": 1,
+      "icon": "Home",
       "name": "Konto 1",
-      "kontostand": 1000,
+      "kontostand": 1100,
       "kontonummer": "DE123456789",
-      "Buchungen": [
+      "buchungen": [
         {
           "id": 1,
           "betrag": 100,
@@ -64,10 +65,11 @@
     },
     {
       "id": 2,
+      "icon": "ShowChart",
       "name": "Konto 2",
       "kontostand": 500,
       "kontonummer": "DE987654321",
-      "Buchungen": [
+      "buchungen": [
         {
           "id": 1,
           "betrag": 100,
@@ -126,10 +128,11 @@
     },
     {
       "id": 3,
+      "icon": "School",
       "name": "Konto 3",
       "kontostand": 2000,
       "kontonummer": "DE123456789",
-      "Buchungen": [
+      "buchungen": [
         {
           "id": 1,
           "betrag": 100,
@@ -185,6 +188,14 @@
           "buchungstext": "Testbuchung 9"
         }
       ]
+    },
+    {
+      "id": 4,
+      "icon": "Category",
+      "name": "Test",
+      "kontostand": 0,
+      "kontonummer": "DE0",
+      "buchungen": []
     }
   ]
 }
