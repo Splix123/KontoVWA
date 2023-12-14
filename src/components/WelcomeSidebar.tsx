@@ -1,5 +1,7 @@
+import { Drawer } from "@mui/material";
+
 function WelcomeSidebar() {
-  return <div>WelcomeSidebar</div>;
+  return <Drawer></Drawer>;
 }
 
 export default WelcomeSidebar;

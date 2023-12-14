@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useQuery } from "react-query";
 
 // Components
+import WelcomeSidebar from "./WelcomeSidebar";
 import KontoQuadrat from "./KontoQuadrat";
 import AddKontoQuadrat from "./AddKontoQuadrat";
 
@@ -40,6 +41,7 @@ function Welcome() {
         marginTop: 7,
       }}
     >
+      <WelcomeSidebar />
       <Typography variant="h4" fontWeight="bold">
         Kontoauswahl
       </Typography>
