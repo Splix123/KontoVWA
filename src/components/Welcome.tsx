@@ -1,5 +1,6 @@
 // libraries
 import { Typography } from "@mui/material";
+import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { useEffect } from "react";
 
 // Components
@@ -7,10 +8,10 @@ import KontoQuadrat from "./KontoQuadrat";
 import AddKontoQuadrat from "./AddKontoQuadrat";
 
 // Stores
-import drawerStore from "../store/drawerStore.store";
+import drawerStore from "../store/DrawerStore.store";
 // TODO: Remove when db is implemented
 import kontenStore from "../store/kontenStore.store";
-import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+
 const data = [
   {
     id: 1,

@@ -1,7 +1,7 @@
 // Libraries
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material";
-import { QueryClient, QueryClientProvider } from "react-query";
+// import { QueryClient, QueryClientProvider } from "react-query";
 
 // Components
 import Welcome from "./components/Welcome";
@@ -11,7 +11,7 @@ import Uebersicht from "./components/Uebersicht";
 import "./App.css";
 
 // Enable React-Query
-const queryClient = new QueryClient();
+// const queryClient = new QueryClient();
 
 // Theme
 const theme = createTheme({
@@ -41,16 +41,14 @@ const theme = createTheme({
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Welcome />} />
-            <Route path="/uebersicht" element={<Uebersicht />} />
-          </Routes>
-        </Router>
-      </ThemeProvider>
-    </QueryClientProvider>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/uebersicht" element={<Uebersicht />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 

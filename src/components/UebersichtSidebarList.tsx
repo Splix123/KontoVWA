@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 
 // Stores
-import drawerStore from "../store/DrawerStore.store";
+import drawerStore from "../store/drawerStore.store";
 import kontenStore from "../store/kontenStore.store";
 
 // Icons
