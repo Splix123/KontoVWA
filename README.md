@@ -8,7 +8,14 @@ Das Programm KontoVWA (geschrieben in COBOL) von Prof. Marmitt neu geschrieben u
 
 Immoment wurde das Programm noch nicht gebuildet --> d.h. man testet das Programm am besten im Dev-Modus aus dazu einfach:
 
-1. asddf
+1. Code von Github downloaden
+2. Im Terminal (Node.js sollte installiert sein):
+   1. "npm install" eingeben und die Packages installieren lassen
+   2. "npm run dev" eingeben
+   3. Den angezeigten Link aufrufen (...localhost...)
+   4. Ein zweites Terminal fenster öffnen
+   5. "npm run server" eingeben
+3. Fertig! Im browserfenster müsste nun das Fenster angezeigt werden
 
 ### ~~Sprint 1~~
 
