@@ -47,7 +47,7 @@ function UebersichtSidebarList() {
               </Badge>
             </ListItemIcon>
             <ListItemText
-              primaryTypographyProps={{ color: "text.secondary" }}
+              primaryTypographyProps={{ color: "common.white" }}
               primary={konto.name}
               secondaryTypographyProps={{ color: "lightgray" }}
               secondary={konto.kontonummer}

@@ -1,13 +1,24 @@
 // Libraries
 import { useState } from "react";
-import { Button, Popover, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import { Button, Popover, Stack, Typography } from "@mui/material";
 
 // Types
 import { Konto } from "../../types";
 type Props = {
   konto: Konto;
 };
+
+// Stores
+import kontenStore from "../store/kontenStore.store";
+
+// Functions
+async function deleteKonto(kontoId: number) {
+  const response = await fetch(`http://localhost:3000/konto/${kontoId}`, {
+    method: "DELETE",
+  });
+  return response.json();
+}
 
 // Icons
 import {
@@ -18,6 +29,7 @@ import {
   Category,
   Alarm,
 } from "@mui/icons-material";
+import { useMutation } from "react-query";
 
 const icons = {
   AccountBalance: <AccountBalance sx={{ fontSize: 50 }} />,
@@ -31,18 +43,26 @@ const icons = {
 function KontoQuadrat({ konto }: Props) {
   const IconComponent = icons[konto.icon];
 
+  //Mutations
+  const { mutateAsync: deleteKontoMutation } = useMutation({
+    mutationFn: deleteKonto,
+  });
+
   // States
+  const { removeKonto } = kontenStore();
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
   // Handler
-  const handleRightClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleRightClick = (
+    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => {
     e.preventDefault();
     setAnchorEl(e.currentTarget as HTMLButtonElement);
   };
 
   const handleDelete = () => {
-    // deleteUserMutation(selectedUser);
-    // removeKonto(konto.id);
+    deleteKontoMutation(konto.id);
+    removeKonto(konto.id);
     setAnchorEl(null);
   };
 
@@ -95,7 +115,7 @@ function KontoQuadrat({ konto }: Props) {
           color="error"
           onClick={handleDelete}
         >
-          Delete User
+          Konto Löschen?
         </Button>
       </Popover>
     </>

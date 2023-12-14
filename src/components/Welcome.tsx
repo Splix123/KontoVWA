@@ -10,6 +10,8 @@ import AddKontoQuadrat from "./AddKontoQuadrat";
 
 // Stores
 import kontenStore from "../store/kontenStore.store";
+
+// Types
 import { Konto } from "../../types";
 
 function Welcome() {
