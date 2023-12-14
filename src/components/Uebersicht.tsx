@@ -8,9 +8,13 @@ import {
   TableRow,
 } from "@mui/material";
 
+// Components
+import Sidebar from "./UebersichtSidebar";
+
 function Uebersicht() {
   return (
     <>
+      <Sidebar />
       <Table>
         <TableHead>
           <TableRow>
@@ -21,14 +25,14 @@ function Uebersicht() {
           </TableRow>
         </TableHead>
         <TableBody>
-          <TableRow>
+          <TableRow hover>
             <TableCell>1</TableCell>
             <TableCell>2</TableCell>
             <TableCell>3</TableCell>
             <TableCell>4</TableCell>
           </TableRow>
         </TableBody>
-        <TableFooter>
+        <TableFooter sx={{ color: "text.primary" }}>
           <TableRow>
             <TableCell>Aktueller Saldo:</TableCell>
             <TableCell></TableCell>

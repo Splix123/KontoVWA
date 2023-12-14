@@ -5,22 +5,55 @@ import { Button, Stack, Typography } from "@mui/material";
 type props = {
   name: string;
   kontostand: number;
-  kontonummer: string;
+  icon: "Home" | "School" | "ShowChart" | "Category" | "Alarm";
 };
 
-function KontoQuadrat({ name, kontostand, kontonummer }: props) {
+// Icons
+import {
+  AccountBalance,
+  Home,
+  School,
+  ShowChart,
+  Category,
+  Alarm,
+} from "@mui/icons-material";
+
+const icons = {
+  AccountBalance: <AccountBalance sx={{ fontSize: 50 }} />,
+  Home: <Home sx={{ fontSize: 50 }} />,
+  School: <School sx={{ fontSize: 50 }} />,
+  ShowChart: <ShowChart sx={{ fontSize: 50 }} />,
+  Category: <Category sx={{ fontSize: 50 }} />,
+  Alarm: <Alarm sx={{ fontSize: 50 }} />,
+};
+
+function KontoQuadrat({ name, kontostand, icon }: props) {
   // Handler
   const kontoClickHandler = () => {
     console.log("Konto wurde angeklickt");
   };
 
+  const IconComponent = icons[icon];
+
   return (
     <>
-      <Button variant="contained" onClick={kontoClickHandler}>
-        <Stack direction="column">
-          <Typography variant="h5">{name}</Typography>
-          <Typography variant="h6">{kontostand}</Typography>
-          <Typography variant="h6">{kontonummer}</Typography>
+      <Button
+        variant="text"
+        sx={{
+          backgroundColor: "common.white",
+          width: 150,
+          height: 150,
+        }}
+        onClick={kontoClickHandler}
+      >
+        <Stack direction="column" alignItems="center" spacing={1}>
+          <Typography variant="h5" fontWeight="bold" color="text.primary">
+            {kontostand}€
+          </Typography>
+          {IconComponent}
+          <Typography color="GrayText" style={{ fontSize: 15 }}>
+            {name}
+          </Typography>
         </Stack>
       </Button>
     </>

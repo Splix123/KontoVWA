@@ -1,24 +1,25 @@
 // Libraries
-import { useState } from "react";
 import {
   styled,
   Theme,
   CSSObject,
   Drawer as MuiDrawer,
-  List,
   Divider,
   IconButton,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
   Typography,
 } from "@mui/material";
 
+// Components
+import UebersichtSidebarList from "./UebersichtSidebarList";
+
+// Stores
+import drawerStore from "../store/DrawerStore.store";
+
 // Icons
-import { Menu, ChevronLeft, Inbox, Mail } from "@mui/icons-material";
+import { Menu, ChevronLeft } from "@mui/icons-material";
 
 const DRAWERWIDTH = 240;
+const TEXTCOLOR = "#FFF";
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: DRAWERWIDTH,
@@ -42,6 +43,8 @@ const closedMixin = (theme: Theme): CSSObject => ({
 });
 
 const DrawerHeader = styled("div")(({ theme }) => ({
+  // TODO: Better color
+  backgroundColor: theme.palette.primary.main,
   display: "flex",
   alignItems: "center",
   justifyContent: "flex-end",
@@ -58,17 +61,29 @@ const Drawer = styled(MuiDrawer, {
   boxSizing: "border-box",
   ...(open && {
     ...openedMixin(theme),
-    "& .MuiDrawer-paper": openedMixin(theme),
+    "& .MuiDrawer-paper": {
+      ...openedMixin(theme),
+      backgroundColor: theme.palette.primary.main,
+      "&::-webkit-scrollbar": {
+        width: 0,
+      },
+    },
   }),
   ...(!open && {
     ...closedMixin(theme),
-    "& .MuiDrawer-paper": closedMixin(theme),
+    "& .MuiDrawer-paper": {
+      ...closedMixin(theme),
+      backgroundColor: theme.palette.primary.main,
+      "&::-webkit-scrollbar": {
+        width: 0,
+      },
+    },
   }),
 }));
 
 function Sidebar() {
   // States
-  const [open, setOpen] = useState(false);
+  const { open, setOpen } = drawerStore();
 
   // Handlers
   const handleDrawerOpen = () => {
@@ -81,54 +96,30 @@ function Sidebar() {
 
   return (
     <>
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent" open={open} className="drawer">
         <DrawerHeader>
           {open ? (
             <>
-              <Typography variant="h6" marginRight={15}>
+              <Typography variant="h6" marginRight={15} color={TEXTCOLOR}>
                 Menü
               </Typography>
               <IconButton onClick={handleDrawerClose}>
-                <ChevronLeft />
+                <ChevronLeft htmlColor={TEXTCOLOR} />
               </IconButton>
             </>
           ) : (
             <IconButton
-              color="inherit"
               aria-label="open drawer"
               onClick={handleDrawerOpen}
               edge="start"
               sx={{ marginRight: 0.5 }}
             >
-              <Menu />
+              <Menu htmlColor={TEXTCOLOR} />
             </IconButton>
           )}
         </DrawerHeader>
-        <Divider />
-        <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 65,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {index % 2 === 0 ? <Inbox /> : <Mail />}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
+        <Divider variant="middle" />
+        <UebersichtSidebarList />
       </Drawer>
     </>
   );

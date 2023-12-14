@@ -8,7 +8,7 @@ type StoreType = {
   konten: Konto[];
   setKonten: (konten: Konto[]) => void;
   addKonto: (newKonto: Konto) => void;
-  removeKonto: (id: number) => void;
+  removeKonto: (kontoId: number) => void;
 };
 
 const useStore = create<StoreType>((set) => ({
@@ -16,9 +16,9 @@ const useStore = create<StoreType>((set) => ({
   setKonten: (konten) => set({ konten }),
   addKonto: (newKonto) =>
     set((state) => ({ konten: [...state.konten, newKonto] })),
-  removeKonto: (id) =>
+  removeKonto: (kontoId) =>
     set((state) => ({
-      konten: state.konten.filter((konto) => konto.id !== id),
+      konten: state.konten.filter((konto) => konto.id !== kontoId),
     })),
 }));
 
