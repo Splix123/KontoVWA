@@ -14,7 +14,8 @@ import drawerStore from "../store/drawerStore.store";
 import kontenStore from "../store/kontenStore.store";
 
 // Icons
-import { AccountBalanceWallet } from "@mui/icons-material";
+// TODO: Replace with proper icon
+import { AccountBalanceWallet, Apps } from "@mui/icons-material";
 
 function UebersichtSidebarList() {
   // States
@@ -23,6 +24,32 @@ function UebersichtSidebarList() {
 
   return (
     <List>
+      <ListItem disablePadding sx={{ display: "block" }}>
+        <ListItemButton
+          component={Link}
+          to={`/`}
+          sx={{
+            minHeight: 120,
+            justifyContent: open ? "initial" : "center",
+            px: 2.5,
+          }}
+        >
+          <ListItemIcon
+            sx={{
+              minWidth: 0,
+              mr: open ? 3 : "auto",
+              justifyContent: "center",
+            }}
+          >
+            <Apps htmlColor="#FFF" />
+          </ListItemIcon>
+          <ListItemText
+            primaryTypographyProps={{ color: "common.white" }}
+            primary={"Kontoauswahl"}
+            sx={{ opacity: open ? 1 : 0 }}
+          />
+        </ListItemButton>
+      </ListItem>
       {konten.map((konto) => (
         <ListItem key={konto.id} disablePadding sx={{ display: "block" }}>
           <ListItemButton

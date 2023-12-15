@@ -188,14 +188,6 @@
           "buchungstext": "Testbuchung 39"
         }
       ]
-    },
-    {
-      "id": 4,
-      "icon": "Category",
-      "name": "Test",
-      "kontostand": 0,
-      "kontonummer": "DE0",
-      "buchungen": []
     }
   ]
 }

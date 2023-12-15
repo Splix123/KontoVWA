@@ -1,7 +1,12 @@
-import { Drawer } from "@mui/material";
+import { Drawer, Typography } from "@mui/material";
 
 function WelcomeSidebar() {
-  return <Drawer></Drawer>;
+  return (
+    <Drawer variant="permanent">
+      <img src="https://via.placeholder.com/150" alt="Logo" />
+      <Typography variant="h6">Marmitt Corp.</Typography>
+    </Drawer>
+  );
 }
 
 export default WelcomeSidebar;
