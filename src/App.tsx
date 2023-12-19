@@ -2,6 +2,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import "dayjs/locale/de";
 
 // Components
 import Welcome from "./components/Welcome";
@@ -64,7 +67,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
-        <RouterProvider router={router} />
+        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="de">
+          <RouterProvider router={router} />
+        </LocalizationProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );

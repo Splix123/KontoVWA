@@ -8,6 +8,7 @@ import { useQuery } from "react-query";
 import WelcomeSidebar from "./WelcomeSidebar";
 import KontoQuadrat from "./KontoQuadrat";
 import AddKontoQuadrat from "./AddKontoQuadrat";
+import DateiLadenQuadrat from "./DateiLadenQuadrat";
 
 // Stores
 import kontenStore from "../store/kontenStore.store";
@@ -48,6 +49,7 @@ function Welcome() {
       <Typography variant="overline" color={"GrayText"}>
         Hi, wilkommen zur KontoVWA!
       </Typography>
+      {/* TODO: Grids aufräumen */}
       <div style={{ marginTop: 30 }}>
         <Grid2 container rowSpacing={4} columnSpacing={4}>
           {konten.map((konto: Konto) => (
@@ -58,6 +60,7 @@ function Welcome() {
           <Grid2>
             <AddKontoQuadrat />
           </Grid2>
+          <DateiLadenQuadrat />
         </Grid2>
       </div>
     </div>
