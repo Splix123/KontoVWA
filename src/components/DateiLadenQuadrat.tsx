@@ -20,6 +20,7 @@ const VisuallyHiddenInput = styled("input")({
 
 function DateiLadenQuadrat() {
   // States
+  // TODO: finish implementing file upload
   const [file, setFile] = useState<File | null>(null);
 
   // Handler

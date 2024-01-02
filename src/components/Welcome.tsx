@@ -46,6 +46,7 @@ function Welcome() {
   };
   const handleKeyR = (e: KeyboardEvent) => {
     if (!addKontoOpen && e.key === "r") {
+      // TODO: implement reading from file
       console.log("r");
     }
   };

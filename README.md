@@ -33,7 +33,7 @@ Immoment wurde das Programm noch nicht gebuildet --> d.h. man testet das Program
 
 - ~~Als Benutzer möchte ich Buchungen anlegen können~~
 - ~~Als Benutzer möchte ich Buchungen löschen können~~
-- Als Benutzer möchte ich Shortcuts um einzelne Funktionen schneller ausführen zu können
+- ~~Als Benutzer möchte ich Shortcuts um einzelne Funktionen schneller ausführen zu können~~
 - Als Benutzer möchte ich eine Bestätigung erhalten, wenn ich eine Überweisung erfolgreich abgeschlossen habe
 - ~~Als Softwareentwickler möchte ich sicherstellen, dass Software auch mit alteren Versionen kompatibel ist~~
 - Als Benutzer möchte ich meine Konten speichern und laden können
