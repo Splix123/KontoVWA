@@ -13,47 +13,37 @@ import { DatePicker } from "@mui/x-date-pickers";
 import dayjs, { Dayjs } from "dayjs";
 import { useState } from "react";
 import { useMutation } from "react-query";
-import { useParams } from "react-router-dom";
 
 // Stores
-import kontenStore from "../store/kontenStore.store";
+import buchungStore from "../store/buchungStore.store";
 
 // Types
 import { Buchung } from "../../types.d";
+type Props = {
+  kontonummer: string;
+};
 
 // Icons
 import { Add } from "@mui/icons-material";
 
 // Functions
-async function addBuchungFunction({
-  buchung,
-  kontoId,
-}: {
-  buchung: Buchung;
-  kontoId: number;
-}) {
-  const response = await fetch(
-    `http://localhost:3000/konto/${kontoId}/buchungen`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(buchung),
-    }
-  );
+async function addBuchungFunction(buchung: Buchung) {
+  const response = await fetch(`http://localhost:3000/buchung`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(buchung),
+  });
   return response.json();
 }
 
-function AddBuchung() {
-  //Fetch id from url
-  const { kontoId } = useParams();
-
+function AddBuchung({ kontonummer }: Props) {
   //Mutations
   const { mutateAsync: addBuchungMutation } = useMutation({
     mutationFn: addBuchungFunction,
   });
 
   // States
-  const { konten, addBuchung } = kontenStore();
+  const { buchungen, addBuchung, lastId } = buchungStore();
   const [openDialog, setOpenDialog] = useState(false);
   const [betrag, setBetrag] = useState("");
   const [error, setError] = useState(false);
@@ -70,14 +60,15 @@ function AddBuchung() {
       setError(true);
     } else {
       const newBuchung = {
-        id: konten[Number(kontoId)].buchungen.length + 1,
+        id: lastId + 1,
+        lfd: buchungen.length + 1,
         betrag: Number(betrag),
         buchungsdatum: dayjs(datum).format("DD.MM.YYYY"),
         buchungstext: text,
+        kontonummer: kontonummer,
       };
-      console.log(konten[Number(kontoId)].buchungen.length + 1);
-      addBuchungMutation({ buchung: newBuchung, kontoId: Number(kontoId) });
-      addBuchung(Number(kontoId), newBuchung);
+      addBuchungMutation(newBuchung);
+      addBuchung(newBuchung);
       setOpenDialog(false);
     }
   };

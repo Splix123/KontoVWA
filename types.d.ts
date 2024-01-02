@@ -4,11 +4,12 @@ export type Konto = {
   name: string;
   kontostand: number;
   kontonummer: string;
-  buchungen: Buchung[];
 };
 
 export type Buchung = {
   id: number;
+  lfd: number;
+  kontonummer: string;
   betrag: number;
   buchungsdatum: string;
   buchungstext: string;

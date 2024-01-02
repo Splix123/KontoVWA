@@ -10,6 +10,7 @@ import "dayjs/locale/de";
 import Welcome from "./components/Welcome";
 import UebersichtSidebar from "./components/UebersichtSidebar";
 import Uebersicht from "./components/Uebersicht";
+import Credits from "./components/Credits";
 import ErrorPage from "./components/ErrorPage";
 
 // Styles
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Welcome />,
+  },
+  {
+    path: "/credits",
+    element: <Credits />,
   },
   {
     path: "/uebersicht",

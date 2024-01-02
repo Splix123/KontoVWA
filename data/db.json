@@ -5,189 +5,79 @@
       "icon": "Home",
       "name": "Konto 1",
       "kontostand": 1100,
-      "kontonummer": "DE123456789",
-      "buchungen": [
-        {
-          "id": 1,
-          "betrag": 100,
-          "buchungsdatum": "01.01.2023",
-          "buchungstext": "Testbuchung 1"
-        },
-        {
-          "id": 2,
-          "betrag": -200,
-          "buchungsdatum": "02.01.2023",
-          "buchungstext": "Testbuchung 2"
-        },
-        {
-          "id": 3,
-          "betrag": 300,
-          "buchungsdatum": "03.01.2023",
-          "buchungstext": "Testbuchung 3"
-        },
-        {
-          "id": 4,
-          "betrag": -400,
-          "buchungsdatum": "04.01.2023",
-          "buchungstext": "Testbuchung 4"
-        },
-        {
-          "id": 5,
-          "betrag": 500,
-          "buchungsdatum": "05.01.2023",
-          "buchungstext": "Testbuchung 5"
-        },
-        {
-          "id": 6,
-          "betrag": 600,
-          "buchungsdatum": "06.01.2023",
-          "buchungstext": "Testbuchung 6"
-        },
-        {
-          "id": 7,
-          "betrag": 700,
-          "buchungsdatum": "07.01.2023",
-          "buchungstext": "Testbuchung 7"
-        },
-        {
-          "id": 8,
-          "betrag": -800,
-          "buchungsdatum": "08.01.2023",
-          "buchungstext": "Testbuchung 8"
-        },
-        {
-          "id": 9,
-          "betrag": 900,
-          "buchungsdatum": "09.01.2023",
-          "buchungstext": "Testbuchung 9"
-        }
-      ]
+      "kontonummer": "DE123456789"
     },
     {
       "id": 2,
       "icon": "ShowChart",
       "name": "Konto 2",
       "kontostand": 500,
-      "kontonummer": "DE987654321",
-      "buchungen": [
-        {
-          "id": 1,
-          "betrag": 100,
-          "buchungsdatum": "01.01.2023",
-          "buchungstext": "Testbuchung 21"
-        },
-        {
-          "id": 2,
-          "betrag": 200,
-          "buchungsdatum": "02.01.2023",
-          "buchungstext": "Testbuchung 22"
-        },
-        {
-          "id": 3,
-          "betrag": 300,
-          "buchungsdatum": "03.01.2023",
-          "buchungstext": "Testbuchung 23"
-        },
-        {
-          "id": 4,
-          "betrag": 400,
-          "buchungsdatum": "04.01.2023",
-          "buchungstext": "Testbuchung 24"
-        },
-        {
-          "id": 5,
-          "betrag": 500,
-          "buchungsdatum": "05.01.2023",
-          "buchungstext": "Testbuchung 25"
-        },
-        {
-          "id": 6,
-          "betrag": 600,
-          "buchungsdatum": "06.01.2023",
-          "buchungstext": "Testbuchung 26"
-        },
-        {
-          "id": 7,
-          "betrag": 700,
-          "buchungsdatum": "07.01.2023",
-          "buchungstext": "Testbuchung 27"
-        },
-        {
-          "id": 8,
-          "betrag": 800,
-          "buchungsdatum": "08.01.2023",
-          "buchungstext": "Testbuchung 28"
-        },
-        {
-          "id": 9,
-          "betrag": 900,
-          "buchungsdatum": "09.01.2023",
-          "buchungstext": "Testbuchung 29"
-        }
-      ]
+      "kontonummer": "DE987654321"
     },
     {
       "id": 3,
       "icon": "School",
       "name": "Konto 3",
       "kontostand": 2000,
-      "kontonummer": "DE123456789",
-      "buchungen": [
-        {
-          "id": 1,
-          "betrag": 100,
-          "buchungsdatum": "01.01.2023",
-          "buchungstext": "Testbuchung 31"
-        },
-        {
-          "id": 2,
-          "betrag": 200,
-          "buchungsdatum": "02.01.2023",
-          "buchungstext": "Testbuchung 32"
-        },
-        {
-          "id": 3,
-          "betrag": 300,
-          "buchungsdatum": "03.01.2023",
-          "buchungstext": "Testbuchung 33"
-        },
-        {
-          "id": 4,
-          "betrag": 400,
-          "buchungsdatum": "04.01.2023",
-          "buchungstext": "Testbuchung 34"
-        },
-        {
-          "id": 5,
-          "betrag": 500,
-          "buchungsdatum": "05.01.2023",
-          "buchungstext": "Testbuchung 35"
-        },
-        {
-          "id": 6,
-          "betrag": 600,
-          "buchungsdatum": "06.01.2023",
-          "buchungstext": "Testbuchung 36"
-        },
-        {
-          "id": 7,
-          "betrag": 700,
-          "buchungsdatum": "07.01.2023",
-          "buchungstext": "Testbuchung 37"
-        },
-        {
-          "id": 8,
-          "betrag": 800,
-          "buchungsdatum": "08.01.2023",
-          "buchungstext": "Testbuchung 38"
-        },
-        {
-          "id": 9,
-          "betrag": 900,
-          "buchungsdatum": "09.01.2023",
-          "buchungstext": "Testbuchung 39"
-        }
-      ]
+      "kontonummer": "DE123454321"
+    }
+  ],
+  "buchung": [
+    {
+      "id": 1,
+      "lfd": 1,
+      "betrag": 100,
+      "buchungsdatum": "01.01.2023",
+      "buchungstext": "Testbuchung 1",
+      "kontonummer": "DE123456789"
+    },
+    {
+      "id": 2,
+      "lfd": 2,
+      "betrag": 300,
+      "buchungsdatum": "03.01.2023",
+      "buchungstext": "Testbuchung 3",
+      "kontonummer": "DE123456789"
+    },
+    {
+      "id": 3,
+      "lfd": 3,
+      "betrag": 500,
+      "buchungsdatum": "05.01.2023",
+      "buchungstext": "Testbuchung 5",
+      "kontonummer": "DE123456789"
+    },
+    {
+      "id": 4,
+      "lfd": 4,
+      "betrag": 700,
+      "buchungsdatum": "07.01.2023",
+      "buchungstext": "Testbuchung 7",
+      "kontonummer": "DE123456789"
+    },
+    {
+      "id": 6,
+      "lfd": 1,
+      "betrag": -200,
+      "buchungsdatum": "02.01.2023",
+      "buchungstext": "Testbuchung 2",
+      "kontonummer": "DE987654321"
+    },
+    {
+      "id": 7,
+      "lfd": 2,
+      "betrag": 600,
+      "buchungsdatum": "06.01.2023",
+      "buchungstext": "Testbuchung 6",
+      "kontonummer": "DE987654321"
+    },
+    {
+      "id": 8,
+      "lfd": 1,
+      "betrag": 100,
+      "buchungsdatum": "02.01.2024",
+      "buchungstext": "",
+      "kontonummer": "DE123454321"
     }
   ]
 }

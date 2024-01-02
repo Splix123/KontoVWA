@@ -1,8 +1,9 @@
 // Libraries
 import { Button, Stack, Typography, styled } from "@mui/material";
+import { useState } from "react";
 
 // Icons
-import { CloudUpload } from "@mui/icons-material";
+import { CloudUploadOutlined } from "@mui/icons-material";
 
 // Hiiden Input
 const VisuallyHiddenInput = styled("input")({
@@ -18,6 +19,16 @@ const VisuallyHiddenInput = styled("input")({
 });
 
 function DateiLadenQuadrat() {
+  // States
+  const [file, setFile] = useState<File | null>(null);
+
+  // Handler
+  const fileInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setFile(e.target.files[0]);
+    }
+  };
+
   return (
     <Button
       component="label"
@@ -35,8 +46,12 @@ function DateiLadenQuadrat() {
         <Typography variant="body1" fontWeight="bold">
           hochladen
         </Typography>
-        <VisuallyHiddenInput type="file" />
-        <CloudUpload sx={{ fontSize: 50 }} />
+        <VisuallyHiddenInput
+          type="file"
+          accept=".IDX"
+          onChange={fileInputHandler}
+        />
+        <CloudUploadOutlined sx={{ fontSize: 50 }} />
       </Stack>
     </Button>
   );

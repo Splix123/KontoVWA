@@ -20,6 +20,16 @@ async function deleteKonto(kontoId: number) {
   return response.json();
 }
 
+async function deleteBuchungen(kontonummer: string) {
+  const response = await fetch(
+    `http://localhost:3000/buchung?kontonummer=${kontonummer}`,
+    {
+      method: "DELETE",
+    }
+  );
+  return response.json();
+}
+
 // Icons
 import {
   AccountBalance,
@@ -48,6 +58,10 @@ function KontoQuadrat({ konto }: Props) {
     mutationFn: deleteKonto,
   });
 
+  const { mutateAsync: deleteBuchungenMutation } = useMutation({
+    mutationFn: deleteBuchungen,
+  });
+
   // States
   const { removeKonto } = kontenStore();
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
@@ -62,6 +76,7 @@ function KontoQuadrat({ konto }: Props) {
 
   const handleDelete = () => {
     deleteKontoMutation(konto.id);
+    deleteBuchungenMutation(konto.kontonummer);
     removeKonto(konto.id);
     setAnchorEl(null);
   };
@@ -87,6 +102,7 @@ function KontoQuadrat({ konto }: Props) {
       >
         <Stack direction="column" alignItems="center" spacing={1}>
           <Typography variant="h5" fontWeight="bold" color="text.primary">
+            {/* kontostand noch nicht richtig berechnet */}
             {konto.kontostand}€
           </Typography>
           {IconComponent}
