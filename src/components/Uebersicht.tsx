@@ -13,6 +13,7 @@ import {
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
+import { useNavigate } from "react-router-dom";
 
 // Components
 import AddBuchungDialog from "./AddBuchungDialog";
@@ -21,7 +22,7 @@ import OnHoverButtons from "./OnHoverButtons";
 // Stores
 import kontenStore from "../store/kontenStore.store";
 import buchungStore from "../store/buchungStore.store";
-import drawerStore from "../store/drawerStore.store";
+import openStore from "../store/openStore.store";
 import { Buchung } from "../../types";
 
 function Uebersicht() {
@@ -52,10 +53,41 @@ function Uebersicht() {
       );
     }
   }, [isLoading, data, setBuchungen, currentKonto, setLastId]);
-  const { open } = drawerStore();
+  const { addBuchungOpen, setAddBuchungOpen, drawerOpen } = openStore();
   const [hover, setHover] = useState({ rowId: 0, hovered: false });
 
-  const marginLeftValue = open ? 260 : 85;
+  //Handlers
+  const handleKeyN = (e: KeyboardEvent) => {
+    if (!addBuchungOpen && e.key === "n") {
+      setAddBuchungOpen(true);
+    }
+  };
+  const navigate = useNavigate();
+  const numberHandlers: ((e: KeyboardEvent) => void)[] = [];
+  for (let i = 1; i <= 9; i++) {
+    const handleKeyNumber = (e: KeyboardEvent) => {
+      if (!addBuchungOpen && e.key === String(i)) {
+        navigate(`/uebersicht/${i}`);
+      }
+    };
+    numberHandlers.push(handleKeyNumber);
+  }
+
+  //Shortcuts
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyN);
+    for (let i = 0; i < numberHandlers.length; i++) {
+      document.addEventListener("keydown", numberHandlers[i]);
+    }
+    return () => {
+      document.removeEventListener("keydown", handleKeyN);
+      for (let i = 0; i < numberHandlers.length; i++) {
+        document.removeEventListener("keydown", numberHandlers[i]);
+      }
+    };
+  });
+
+  const marginLeftValue = drawerOpen ? 260 : 85;
   let saldo = 0;
 
   if (currentKonto === undefined) {

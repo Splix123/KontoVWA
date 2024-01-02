@@ -16,6 +16,7 @@ import { useMutation } from "react-query";
 
 // Stores
 import buchungStore from "../store/buchungStore.store";
+import openStore from "../store/openStore.store";
 
 // Types
 import { Buchung } from "../../types.d";
@@ -44,7 +45,7 @@ function AddBuchung({ kontonummer }: Props) {
 
   // States
   const { buchungen, addBuchung, lastId } = buchungStore();
-  const [openDialog, setOpenDialog] = useState(false);
+  const { addBuchungOpen, setAddBuchungOpen } = openStore();
   const [betrag, setBetrag] = useState("");
   const [error, setError] = useState(false);
   const [datum, setDatum] = useState<Dayjs | null>(dayjs());
@@ -52,7 +53,7 @@ function AddBuchung({ kontonummer }: Props) {
 
   // Handler
   const handleClickAddBuchung = () => {
-    setOpenDialog(true);
+    setAddBuchungOpen(true);
   };
 
   const handleAddBuchung = () => {
@@ -69,12 +70,12 @@ function AddBuchung({ kontonummer }: Props) {
       };
       addBuchungMutation(newBuchung);
       addBuchung(newBuchung);
-      setOpenDialog(false);
+      setAddBuchungOpen(false);
     }
   };
 
   const handleClose = () => {
-    setOpenDialog(false);
+    setAddBuchungOpen(false);
     setError(false);
   };
 
@@ -90,7 +91,7 @@ function AddBuchung({ kontonummer }: Props) {
         <Add />
         Buchung hinzufügen
       </Fab>
-      <Dialog open={openDialog} onClose={handleClose}>
+      <Dialog open={addBuchungOpen} onClose={handleClose}>
         <DialogTitle fontWeight="bold">Neue Buchung</DialogTitle>
         <DialogContent>
           <DialogContentText color="text.primary">

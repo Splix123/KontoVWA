@@ -10,7 +10,7 @@ import {
 import { Link } from "react-router-dom";
 
 // Stores
-import drawerStore from "../store/drawerStore.store";
+import drawerStore from "../store/openStore.store";
 import kontenStore from "../store/kontenStore.store";
 
 // Icons
@@ -19,7 +19,7 @@ import { AccountBalanceWallet, Apps } from "@mui/icons-material";
 
 function UebersichtSidebarList() {
   // States
-  const { open } = drawerStore();
+  const { drawerOpen } = drawerStore();
   const { konten } = kontenStore();
 
   return (
@@ -30,14 +30,14 @@ function UebersichtSidebarList() {
           to={`/`}
           sx={{
             minHeight: 120,
-            justifyContent: open ? "initial" : "center",
+            justifyContent: drawerOpen ? "initial" : "center",
             px: 2.5,
           }}
         >
           <ListItemIcon
             sx={{
               minWidth: 0,
-              mr: open ? 3 : "auto",
+              mr: drawerOpen ? 3 : "auto",
               justifyContent: "center",
             }}
           >
@@ -46,7 +46,7 @@ function UebersichtSidebarList() {
           <ListItemText
             primaryTypographyProps={{ color: "common.white" }}
             primary={"Kontoauswahl"}
-            sx={{ opacity: open ? 1 : 0 }}
+            sx={{ opacity: drawerOpen ? 1 : 0 }}
           />
         </ListItemButton>
       </ListItem>
@@ -57,14 +57,14 @@ function UebersichtSidebarList() {
             to={`/uebersicht/${konto.id}`}
             sx={{
               minHeight: 120,
-              justifyContent: open ? "initial" : "center",
+              justifyContent: drawerOpen ? "initial" : "center",
               px: 2.5,
             }}
           >
             <ListItemIcon
               sx={{
                 minWidth: 0,
-                mr: open ? 3 : "auto",
+                mr: drawerOpen ? 3 : "auto",
                 justifyContent: "center",
               }}
             >
@@ -78,7 +78,7 @@ function UebersichtSidebarList() {
               primary={konto.name}
               secondaryTypographyProps={{ color: "lightgray" }}
               secondary={konto.kontonummer}
-              sx={{ opacity: open ? 1 : 0 }}
+              sx={{ opacity: drawerOpen ? 1 : 0 }}
             />
           </ListItemButton>
         </ListItem>

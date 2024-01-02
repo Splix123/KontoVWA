@@ -3,6 +3,7 @@ import { Typography } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { useEffect } from "react";
 import { useQuery } from "react-query";
+import { useNavigate } from "react-router-dom";
 
 // Components
 import WelcomeSidebar from "./WelcomeSidebar";
@@ -12,6 +13,7 @@ import DateiLadenQuadrat from "./DateiLadenQuadrat";
 
 // Stores
 import kontenStore from "../store/kontenStore.store";
+import openStore from "../store/openStore.store";
 
 // Types
 import { Konto } from "../../types";
@@ -34,6 +36,45 @@ function Welcome() {
       setKonten(data);
     }
   }, [isLoading, data, setKonten]);
+  const { addKontoOpen, setAddKontoOpen } = openStore();
+
+  //Handlers
+  const handleKeyN = (e: KeyboardEvent) => {
+    if (!addKontoOpen && e.key === "n") {
+      setAddKontoOpen(true);
+    }
+  };
+  const handleKeyR = (e: KeyboardEvent) => {
+    if (!addKontoOpen && e.key === "r") {
+      console.log("r");
+    }
+  };
+  const navigate = useNavigate();
+  const numberHandlers: ((e: KeyboardEvent) => void)[] = [];
+  for (let i = 1; i <= 9; i++) {
+    const handleKeyNumber = (e: KeyboardEvent) => {
+      if (!addKontoOpen && e.key === String(i)) {
+        navigate(`/uebersicht/${i}`);
+      }
+    };
+    numberHandlers.push(handleKeyNumber);
+  }
+
+  //Shortcuts
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyN);
+    document.addEventListener("keydown", handleKeyR);
+    for (let i = 0; i < numberHandlers.length; i++) {
+      document.addEventListener("keydown", numberHandlers[i]);
+    }
+    return () => {
+      document.removeEventListener("keydown", handleKeyN);
+      document.removeEventListener("keydown", handleKeyR);
+      for (let i = 0; i < numberHandlers.length; i++) {
+        document.removeEventListener("keydown", numberHandlers[i]);
+      }
+    };
+  });
 
   return (
     <div

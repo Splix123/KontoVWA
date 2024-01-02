@@ -23,6 +23,7 @@ import { Konto } from "../../types.d";
 
 // Stores
 import kontenStore from "../store/kontenStore.store";
+import openStore from "../store/openStore.store";
 
 // Mutation functions
 async function addKontoFunction(konto: Konto) {
@@ -44,14 +45,14 @@ function AddKontoQuadrat() {
 
   // States
   const { konten, addKonto } = kontenStore();
-  const [openDialog, setOpenDialog] = useState(false);
+  const { addKontoOpen, setAddKontoOpen } = openStore();
   const [name, setName] = useState("");
   const [icon, setIcon] = useState("Category");
   const [error, setError] = useState(false);
 
   // Handler
   const handleClickAddKonto = () => {
-    setOpenDialog(true);
+    setAddKontoOpen(true);
   };
 
   const handleAddKonto = () => {
@@ -68,12 +69,12 @@ function AddKontoQuadrat() {
       };
       addKontoMutation(newKonto);
       addKonto(newKonto);
-      setOpenDialog(false);
+      setAddKontoOpen(false);
     }
   };
 
   const handleClose = () => {
-    setOpenDialog(false);
+    setAddKontoOpen(false);
     setError(false);
   };
 
@@ -98,7 +99,7 @@ function AddKontoQuadrat() {
           <AddCardIcon sx={{ fontSize: 50 }} />
         </Stack>
       </Button>
-      <Dialog open={openDialog} onClose={handleClose}>
+      <Dialog open={addKontoOpen} onClose={handleClose}>
         <DialogTitle fontWeight="bold">Konto hinzufügen</DialogTitle>
         <DialogContent>
           <DialogContentText color="text.primary">

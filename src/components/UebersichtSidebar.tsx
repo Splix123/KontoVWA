@@ -13,7 +13,7 @@ import {
 import UebersichtSidebarList from "./UebersichtSidebarList";
 
 // Stores
-import drawerStore from "../store/drawerStore.store";
+import drawerStore from "../store/openStore.store";
 
 // Icons
 import { Menu, ChevronLeft } from "@mui/icons-material";
@@ -83,22 +83,22 @@ const Drawer = styled(MuiDrawer, {
 
 function Sidebar() {
   // States
-  const { open, setOpen } = drawerStore();
+  const { drawerOpen, setDrawerOpen } = drawerStore();
 
   // Handlers
   const handleDrawerOpen = () => {
-    setOpen(true);
+    setDrawerOpen(true);
   };
 
   const handleDrawerClose = () => {
-    setOpen(false);
+    setDrawerOpen(false);
   };
 
   return (
     <>
-      <Drawer variant="permanent" open={open} className="drawer">
+      <Drawer variant="permanent" open={drawerOpen} className="drawer">
         <DrawerHeader>
-          {open ? (
+          {drawerOpen ? (
             <>
               <Typography variant="h6" marginRight={15} color={TEXTCOLOR}>
                 Menü
