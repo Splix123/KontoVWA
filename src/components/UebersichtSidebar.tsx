@@ -44,7 +44,6 @@ const closedMixin = (theme: Theme): CSSObject => ({
 });
 
 const DrawerHeader = styled("div")(({ theme }) => ({
-  // TODO: Better color
   backgroundColor: theme.palette.primary.main,
   display: "flex",
   alignItems: "center",
