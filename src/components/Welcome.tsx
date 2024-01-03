@@ -17,6 +17,7 @@ import openStore from "../store/openStore.store";
 
 // Types
 import { Konto } from "../../types";
+import CustomSnackbar from "./CustomSnackbar";
 
 function Welcome() {
   //Fetch data
@@ -106,6 +107,7 @@ function Welcome() {
           </Grid2>
         </Grid2>
       </div>
+      <CustomSnackbar />
     </div>
   );
 }

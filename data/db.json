@@ -3,81 +3,158 @@
     {
       "id": 1,
       "icon": "Home",
-      "name": "Konto 1",
-      "kontostand": 1100,
-      "kontonummer": "DE123456789"
+      "name": "Hauptkonto",
+      "kontostand": 3500.45,
+      "kontonummer": "DE123456"
     },
     {
       "id": 2,
       "icon": "ShowChart",
-      "name": "Konto 2",
-      "kontostand": 500,
-      "kontonummer": "DE987654321"
+      "name": "Portfolio",
+      "kontostand": 12000.78,
+      "kontonummer": "DE876543"
     },
     {
       "id": 3,
       "icon": "School",
-      "name": "Konto 3",
-      "kontostand": 2000,
-      "kontonummer": "DE123454321"
+      "name": "Bildungsfonds",
+      "kontostand": 5000,
+      "kontonummer": "DE112233"
+    },
+    {
+      "id": 4,
+      "icon": "Category",
+      "name": "Arbeit",
+      "kontostand": 7500.65,
+      "kontonummer": "DE445566"
+    },
+    {
+      "id": 5,
+      "icon": "Alarm",
+      "name": "Reisekasse",
+      "kontostand": 2500,
+      "kontonummer": "DE778899"
+    },
+    {
+      "id": 6,
+      "icon": "Home",
+      "name": "Shopping",
+      "kontostand": 350,
+      "kontonummer": "DE112233"
     }
   ],
   "buchung": [
     {
       "id": 1,
       "lfd": 1,
-      "betrag": 100,
+      "betrag": -150,
       "buchungsdatum": "01.01.2023",
-      "buchungstext": "Testbuchung 1",
-      "kontonummer": "DE123456789"
+      "buchungstext": "Lebensmitteleinkauf",
+      "kontonummer": "DE123456"
     },
     {
       "id": 2,
       "lfd": 2,
-      "betrag": 300,
-      "buchungsdatum": "03.01.2023",
-      "buchungstext": "Testbuchung 3",
-      "kontonummer": "DE123456789"
+      "betrag": -50,
+      "buchungsdatum": "05.01.2023",
+      "buchungstext": "Abendessen im Restaurant",
+      "kontonummer": "DE123456"
     },
     {
       "id": 3,
       "lfd": 3,
-      "betrag": 500,
-      "buchungsdatum": "05.01.2023",
-      "buchungstext": "Testbuchung 5",
-      "kontonummer": "DE123456789"
+      "betrag": 2000,
+      "buchungsdatum": "15.01.2023",
+      "buchungstext": "Gehaltseinzahlung",
+      "kontonummer": "DE123456"
     },
     {
       "id": 4,
-      "lfd": 4,
-      "betrag": 700,
-      "buchungsdatum": "07.01.2023",
-      "buchungstext": "Testbuchung 7",
-      "kontonummer": "DE123456789"
+      "lfd": 1,
+      "betrag": -500,
+      "buchungsdatum": "01.02.2023",
+      "buchungstext": "Zahlung von Versorgungsleistungen",
+      "kontonummer": "DE876543"
     },
     {
       "id": 6,
-      "lfd": 1,
-      "betrag": -200,
-      "buchungsdatum": "02.01.2023",
-      "buchungstext": "Testbuchung 2",
-      "kontonummer": "DE987654321"
+      "lfd": 2,
+      "betrag": -100,
+      "buchungsdatum": "10.02.2023",
+      "buchungstext": "Kaffee und Snacks",
+      "kontonummer": "DE876543"
     },
     {
       "id": 7,
-      "lfd": 2,
-      "betrag": 600,
-      "buchungsdatum": "06.01.2023",
-      "buchungstext": "Testbuchung 6",
-      "kontonummer": "DE987654321"
+      "lfd": 3,
+      "betrag": 800,
+      "buchungsdatum": "20.02.2023",
+      "buchungstext": "Dividendeneinkommen",
+      "kontonummer": "DE876543"
     },
     {
       "id": 8,
       "lfd": 1,
-      "betrag": 100,
+      "betrag": 150,
       "buchungsdatum": "02.01.2024",
-      "buchungstext": "",
-      "kontonummer": "DE123454321"
+      "buchungstext": "Bonuszahlung",
+      "kontonummer": "DE112233"
+    },
+    {
+      "id": 9,
+      "lfd": 1,
+      "betrag": -300,
+      "buchungsdatum": "10.03.2023",
+      "buchungstext": "Büromaterial kaufen",
+      "kontonummer": "DE445566"
+    },
+    {
+      "id": 10,
+      "lfd": 2,
+      "betrag": 1200,
+      "buchungsdatum": "18.03.2023",
+      "buchungstext": "Projektzahlung erhalten",
+      "kontonummer": "DE445566"
+    },
+    {
+      "id": 11,
+      "lfd": 1,
+      "betrag": -200,
+      "buchungsdatum": "05.04.2023",
+      "buchungstext": "Reisevorbereitungen",
+      "kontonummer": "DE778899"
+    },
+    {
+      "id": 12,
+      "lfd": 2,
+      "betrag": -50,
+      "buchungsdatum": "10.04.2023",
+      "buchungstext": "Kleidung einkaufen",
+      "kontonummer": "DE778899"
+    },
+    {
+      "id": 13,
+      "lfd": 3,
+      "betrag": -30,
+      "buchungsdatum": "15.04.2023",
+      "buchungstext": "Neue Schuhe",
+      "kontonummer": "DE778899"
+    },
+    {
+      "id": 14,
+      "lfd": 4,
+      "betrag": -75,
+      "buchungsdatum": "10.05.2023",
+      "buchungstext": "Online-Shopping",
+      "kontonummer": "DE112233"
+    },
+    {
+      "id": 15,
+      "lfd": 4,
+      "betrag": 300,
+      "buchungsdatum": "20.05.2023",
+      "buchungstext": "Freelance-Arbeit bezahlt",
+      "kontonummer": "DE123456"
     }
   ]
 }

@@ -24,6 +24,7 @@ import { Konto } from "../../types.d";
 // Stores
 import kontenStore from "../store/kontenStore.store";
 import openStore from "../store/openStore.store";
+import snackbarStore from "../store/snackbarStore.store";
 
 // Mutation functions
 async function addKontoFunction(konto: Konto) {
@@ -46,6 +47,7 @@ function AddKontoQuadrat() {
   // States
   const { konten, addKonto } = kontenStore();
   const { addKontoOpen, setAddKontoOpen } = openStore();
+  const { setSnack } = snackbarStore();
   const [name, setName] = useState("");
   const [icon, setIcon] = useState("Category");
   const [error, setError] = useState(false);
@@ -70,6 +72,7 @@ function AddKontoQuadrat() {
       addKontoMutation(newKonto);
       addKonto(newKonto);
       setAddKontoOpen(false);
+      setSnack("success", "Hinzugefügt!");
     }
   };
 

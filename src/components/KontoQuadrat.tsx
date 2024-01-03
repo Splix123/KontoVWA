@@ -11,6 +11,7 @@ type Props = {
 
 // Stores
 import kontenStore from "../store/kontenStore.store";
+import snackbarStore from "../store/snackbarStore.store";
 
 // Functions
 async function deleteKonto(kontoId: number) {
@@ -20,6 +21,7 @@ async function deleteKonto(kontoId: number) {
   return response.json();
 }
 
+// BUG: Buchungen werden nicht gelöscht
 async function deleteBuchungen(kontonummer: string) {
   const response = await fetch(
     `http://localhost:3000/buchung?kontonummer=${kontonummer}`,
@@ -64,6 +66,7 @@ function KontoQuadrat({ konto }: Props) {
 
   // States
   const { removeKonto } = kontenStore();
+  const { setSnack } = snackbarStore();
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
   // Handler
@@ -79,6 +82,7 @@ function KontoQuadrat({ konto }: Props) {
     deleteBuchungenMutation(konto.kontonummer);
     removeKonto(konto.id);
     setAnchorEl(null);
+    setSnack("error", "Gelöscht");
   };
 
   const handleClose = () => {
