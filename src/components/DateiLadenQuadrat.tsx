@@ -1,9 +1,11 @@
 // Libraries
 import { Button, Stack, Typography, styled } from "@mui/material";
-import { useState } from "react";
 
 // Icons
 import { CloudUploadOutlined } from "@mui/icons-material";
+
+// Stores
+import fileStore from "../store/fileStore.store";
 
 // Hiiden Input
 const VisuallyHiddenInput = styled("input")({
@@ -21,7 +23,7 @@ const VisuallyHiddenInput = styled("input")({
 function DateiLadenQuadrat() {
   // States
   // TODO: finish implementing file upload
-  const [file, setFile] = useState<File | null>(null);
+  const { setFile } = fileStore();
 
   // Handler
   const fileInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {

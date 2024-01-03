@@ -6,15 +6,25 @@ Das Programm KontoVWA (geschrieben in COBOL) von Prof. Marmitt neu geschrieben u
 
 ## Wie teste ich es aus?
 
-Immoment wurde das Programm noch nicht gebuildet --> d.h. man testet das Programm am besten im Dev-Modus aus dazu einfach:
+### Fertige Version via "serve"
 
 1. Code von Github downloaden
 2. Im Terminal (Node.js sollte installiert sein):
-   1. "npm install" eingeben und die Packages installieren lassen
-   2. "npm run dev" eingeben
+   1. (Falls noch nicht in besitz "serve" intallieren: `npm install -g serve`)
+   2. In den "dist" Ordner navigieren: `cd dist`
+   3. Das Programm bereitstellen: `serve`
+   4. Anschliessen noch die Datenbank öffnen: `npm run server`
+3. Fertig! Im browserfenster müsste nun das Fenster angezeigt werden
+
+### Im dev-Modus
+
+1. Code von Github downloaden
+2. Im Terminal (Node.js sollte installiert sein):
+   1. `npm install` eingeben und die Packages installieren lassen
+   2. `npm run dev` eingeben
    3. Den angezeigten Link aufrufen (...localhost...)
    4. Ein zweites Terminal fenster öffnen
-   5. "npm run server" eingeben
+   5. `npm run server` eingeben
 3. Fertig! Im browserfenster müsste nun das Fenster angezeigt werden
 
 ### ~~Sprint 1~~
@@ -34,7 +44,7 @@ Immoment wurde das Programm noch nicht gebuildet --> d.h. man testet das Program
 - ~~Als Benutzer möchte ich Buchungen anlegen können~~
 - ~~Als Benutzer möchte ich Buchungen löschen können~~
 - ~~Als Benutzer möchte ich Shortcuts um einzelne Funktionen schneller ausführen zu können~~
-- Als Benutzer möchte ich eine Bestätigung erhalten, wenn ich eine Überweisung erfolgreich abgeschlossen habe
+- ~~Als Benutzer möchte ich eine Bestätigung erhalten, wenn ich eine Überweisung erfolgreich abgeschlossen habe~~
 - ~~Als Softwareentwickler möchte ich sicherstellen, dass Software auch mit alteren Versionen kompatibel ist~~
 - Als Benutzer möchte ich meine Konten speichern und laden können
 
