@@ -4,42 +4,42 @@
       "id": 1,
       "icon": "Home",
       "name": "Hauptkonto",
-      "kontostand": 3500.45,
+      "kontostand": 3350.45,
       "kontonummer": "DE123456"
     },
     {
       "id": 2,
       "icon": "ShowChart",
       "name": "Portfolio",
-      "kontostand": 12000.78,
+      "kontostand": 11950.78,
       "kontonummer": "DE876543"
     },
     {
       "id": 3,
       "icon": "School",
       "name": "Bildungsfonds",
-      "kontostand": 5000,
+      "kontostand": 4700,
       "kontonummer": "DE112233"
     },
     {
       "id": 4,
       "icon": "Category",
       "name": "Arbeit",
-      "kontostand": 7500.65,
+      "kontostand": 7300.65,
       "kontonummer": "DE445566"
     },
     {
       "id": 5,
       "icon": "Alarm",
       "name": "Reisekasse",
-      "kontostand": 2500,
+      "kontostand": 2400,
       "kontonummer": "DE778899"
     },
     {
       "id": 6,
       "icon": "Home",
       "name": "Shopping",
-      "kontostand": 350,
+      "kontostand": 225,
       "kontonummer": "DE112233"
     }
   ],
@@ -155,6 +155,14 @@
       "buchungsdatum": "20.05.2023",
       "buchungstext": "Freelance-Arbeit bezahlt",
       "kontonummer": "DE123456"
+    },
+    {
+      "id": 16,
+      "lfd": 1,
+      "betrag": 2112,
+      "buchungsdatum": "21.12.2000",
+      "buchungstext": "GeburtstagsPREGeschenk",
+      "kontonummer": "DE0"
     }
   ]
 }

@@ -21,7 +21,7 @@ function Credits() {
         <ListItemIcon>
           <AccountCircle />
         </ListItemIcon>
-        <ListItemText primary="Ali Ansari" secondary="0" />
+        <ListItemText primary="Ali Ansari" secondary="2123073" />
       </ListItem>
       <ListItem>
         <ListItemIcon>
@@ -33,19 +33,19 @@ function Credits() {
         <ListItemIcon>
           <AccountCircle />
         </ListItemIcon>
-        <ListItemText primary="Talha" secondary="0" />
+        <ListItemText primary="Talha Kilic" secondary="2123676" />
       </ListItem>
       <ListItem>
         <ListItemIcon>
           <AccountCircle />
         </ListItemIcon>
-        <ListItemText primary="Dogukan" secondary="0" />
+        <ListItemText primary="Dogukan Aygün" secondary="2120769" />
       </ListItem>
       <ListItem>
         <ListItemIcon>
           <AccountCircle />
         </ListItemIcon>
-        <ListItemText primary="Mikail" secondary="0" />
+        <ListItemText primary="Mikail Gercek" secondary="2022599" />
       </ListItem>
       <ListItem>
         <Link component={routerLink} to={`/`} variant="h6">
